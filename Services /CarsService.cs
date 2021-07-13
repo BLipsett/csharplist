@@ -12,6 +12,11 @@ namespace csharplist.Services
       return FakeDb.Cars;
     }
 
+    public Car GetCarById(int id)
+    {
+      return FakeDb.Cars.Find(car => car.Id == id);
+    }
+
     public Car CreateCar(Car carData)
     {
       var r = new Random();

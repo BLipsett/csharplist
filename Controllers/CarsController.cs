@@ -28,6 +28,25 @@ namespace csharplist.Controllers
       return _cs.GetAll();
     }
 
+    [HttpGet("{id}")]
+    public ActionResult<Car> GetCar(int id)
+    {
+      try
+      {
+        var car = _cs.GetCarById(id);
+        if (car == null)
+        {
+          return BadRequest("Invalid Id");
+        }
+        return Ok(car);
+      }
+      catch (System.Exception e)
+      {
+
+        return Forbid(e.Message);
+      }
+    }
+
     [HttpPost]
     public ActionResult<Car> CreateCar([FromBody] Car carData)
     {
@@ -40,11 +59,6 @@ namespace csharplist.Controllers
       {
         return BadRequest(e.Message);
       }
-    }
-
-    private ActionResult<Car> Created(object p, object car)
-    {
-      throw new NotImplementedException();
     }
   }
 
