@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using csharplist.Models;
 using csharplist.Services;
@@ -32,11 +33,19 @@ namespace csharplist.Controllers
     {
       try
       {
-        var Car = _cs.CreateCar(carData);
-        return Created("api/cars/" + car.id, car)
+        var car = _cs.CreateCar(carData);
+        return Created("api/cars/" + car.Id, car);
+      }
+      catch (System.Exception e)
+      {
+        return BadRequest(e.Message);
       }
     }
 
+    private ActionResult<Car> Created(object p, object car)
+    {
+      throw new NotImplementedException();
+    }
   }
 
 }
