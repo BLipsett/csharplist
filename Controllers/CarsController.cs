@@ -60,6 +60,21 @@ namespace csharplist.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpDelete("{id}")]
+    public ActionResult<Car> DeleteCar(int id)
+    {
+      try
+      {
+        var car = _cs.RemoveCar(id);
+        return Ok(car);
+      }
+      catch (System.Exception e)
+      {
+
+        return BadRequest(e.Message);
+      }
+    }
   }
 
 }

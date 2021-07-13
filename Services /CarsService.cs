@@ -24,5 +24,16 @@ namespace csharplist.Services
       FakeDb.Cars.Add(carData);
       return carData;
     }
+
+    public Car RemoveCar(int id)
+    {
+      var car = FakeDb.Cars.Find(car => car.Id == id);
+      if (car == null)
+      {
+        throw new Exception("Invalid Id");
+      }
+      FakeDb.Cars.Remove(car);
+      return car;
+    }
   }
 }
