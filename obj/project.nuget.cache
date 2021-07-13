@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "tzXqdpd+p7iUfK6eL7cm0qxCu/Du1HUMUf3VHkRizC1fvO5+HiaNc+I62Aw2ZWkUGzzy7xs85p9uruF5jYdl2g==",
+  "success": true,
+  "projectFilePath": "/Users/brianlipsett/source/codeworks/login/csharplist/csharplist.csproj",
+  "expectedPackageFiles": [
+    "/Users/brianlipsett/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/brianlipsett/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/brianlipsett/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/brianlipsett/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/brianlipsett/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/brianlipsett/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
