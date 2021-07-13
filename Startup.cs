@@ -33,8 +33,25 @@ namespace csharplist
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "csharplist", Version = "v1" });
       });
-
+      ConfigureCors(services);
       services.AddTransient<CarsService>();
+    }
+
+    private void ConfigureCors(IServiceCollection services)
+    {
+      services.AddCors(options =>
+      {
+        options.AddPolicy("CorsDevPolicy", builder =>
+              {
+                builder
+                      .AllowAnyMethod()
+                      .AllowAnyHeader()
+                      .AllowCredentials()
+                      .WithOrigins(new string[]{
+                        "http://localhost:8080", "http://localhost:8081"
+                  });
+              });
+      });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +62,7 @@ namespace csharplist
         app.UseDeveloperExceptionPage();
         app.UseSwagger();
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "csharplist v1"));
+        app.UseCors("CorsDevPolicy");
       }
 
       app.UseHttpsRedirection();
